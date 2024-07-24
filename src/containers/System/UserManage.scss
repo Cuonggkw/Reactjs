@@ -1,0 +1,91 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+table th {
+  background-color: #099268;
+  font-size: 18px;
+  color: white;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.btn_edit {
+  width: 50px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #e9ecef;
+  color: #e8590c;
+}
+
+.btn_edit:hover {
+  cursor: pointer;
+  color: #ffc078;
+}
+
+.btn_delete {
+  width: 50px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #e9ecef;
+  color: #e03131;
+}
+
+.btn_delete:hover {
+  cursor: pointer;
+  color: #ff8787;
+}
+
+.modal-container {
+  .modal-header {
+    button {
+      font-size: 25px;
+      background-color: transparent;
+      color: white;
+      border: none;
+    }
+  }
+  .modal-user-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 47%;
+
+      &.max-width {
+        width: 95%;
+      }
+
+      input {
+        border-radius: 3px;
+        border: 1px solid #868e96;
+        outline: none;
+        height: 30px;
+        padding: 0px 10px;
+      }
+    }
+  }
+}
