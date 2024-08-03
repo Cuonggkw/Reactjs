@@ -152,7 +152,7 @@ class UserManage extends Component {
           </button>
         </div>
         <div className="users-table mt-4 mx-1">
-          <table>
+          <table id="customers">
             <tbody>
               <tr>
                 <th>Email</th>

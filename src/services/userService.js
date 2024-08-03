@@ -1,3 +1,4 @@
+import axios from "axios";
 import exios from "../axios";
 const handleLoginAPI = (email, password) => {
   // Axios là HTTP Client giúp xây dựng các ứng dụng kết nối từ nhiều nguồn dữ liệu dễ dàng.
@@ -21,8 +22,24 @@ const deleteUserSer = (usersId) => {
   // return exios.delete("/api/delete-users", { id: usersId });
 };
 
+const getAllCodeService = (inputType) => {
+  return exios.get(`/api/allcode?type=${inputType}`);
+};
+
 const editUserSer = (data) => {
   return exios.put("/api/edit-users", data);
+};
+
+// const getTopDoctorHomeService = (limit) => {
+//   // return axios.get(`/api/topdoctor-home?limit=${limit}`);
+//   return exios.get(`/api/topdoctor-home?limit=${limit}`, function (req, res) {
+//     res.sendFile(__dirname + "/bin/index.html"); // change the path to your index.html
+//   });
+// };
+
+const getTopDoctorHomeService = (limit) => {
+  // return axios.get(`/api/topdoctor-home?limit=${limit}`);
+  return exios.get(`/api/topdoctor-home?limit=${limit}`);
 };
 
 export {
@@ -30,7 +47,9 @@ export {
   getAllUsers,
   ceateNewUserSer,
   deleteUserSer,
+  getAllCodeService,
   editUserSer,
+  getTopDoctorHomeService,
 };
 
 // axios => để request từ client lên server.
