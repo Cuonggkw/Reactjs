@@ -285,11 +285,11 @@ class UserRedux extends Component {
 
               <div className="col-3">
                 <label>
-                  <FormattedMessage id="manage-user.lastName" />
+                  <FormattedMessage id="manage-user.firstName" />
                 </label>
                 <input
                   type="text"
-                  placeholder="Last name"
+                  placeholder="First name"
                   className="form-control"
                   value={firstName}
                   onChange={(event) => {
@@ -300,11 +300,11 @@ class UserRedux extends Component {
 
               <div className="col-3">
                 <label>
-                  <FormattedMessage id="manage-user.firstName" />
+                  <FormattedMessage id="manage-user.lastName" />
                 </label>
                 <input
                   type="text"
-                  placeholder="First name"
+                  placeholder="Last name"
                   className="form-control"
                   value={lastName}
                   onChange={(event) => {

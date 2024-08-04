@@ -1,0 +1,41 @@
+.manage-doctor-container {
+  padding: 10px;
+  .manage-doctor-title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 15px 0;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .more-infor {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 20px;
+
+    .content-left {
+      width: 30%;
+    }
+
+    .content-right {
+      width: 70%;
+    }
+  }
+
+  .manage-doctor-editor {
+  }
+  .btn-save-doctor {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0px;
+    border: none;
+    outline: none;
+    padding: 7px;
+    text-align: center;
+    border-radius: 5px;
+    background: #4c6ef5;
+    color: #dee2e6;
+  }
+}

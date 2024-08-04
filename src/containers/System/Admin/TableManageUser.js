@@ -44,7 +44,7 @@ class TableManageUser extends Component {
 
   handleEditUser = (item) => {
     this.props.handleEditUserFromParent(item);
-    console.log("Hoi dan it user edit:", item);
+    // console.log("Hoi dan it user edit:", item);
   };
 
   handleDeleteUser = (item) => {
@@ -60,8 +60,8 @@ class TableManageUser extends Component {
           <tbody>
             <tr>
               <th>Email</th>
-              <th>Last Name</th>
               <th>First Name</th>
+              <th>Last Name</th>
               <th>Address</th>
               <th>Action</th>
             </tr>
@@ -71,8 +71,8 @@ class TableManageUser extends Component {
                 return (
                   <tr key={index}>
                     <td>{item.email}</td>
-                    <td>{item.firstName}</td>
                     <td>{item.lastName}</td>
+                    <td>{item.firstName}</td>
                     <td>{item.address}</td>
                     <td>
                       <button

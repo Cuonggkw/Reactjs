@@ -27,8 +27,6 @@ class FeaturedDoctor extends Component {
   render() {
     let arrDoctors = this.state.arrDoctors;
     let { language } = this.props;
-    // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
-    console.log("hoidanit: check topDoctorsRedux:", arrDoctors);
 
     return (
       <div className="section-share section-featured-doctor">
@@ -52,7 +50,7 @@ class FeaturedDoctor extends Component {
                       "binary"
                     );
                   }
-                  let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
+                  let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                   let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                   return (
                     <div className="doctor-customize" key={index}>

@@ -19,7 +19,6 @@ const deleteUserSer = (usersId) => {
       id: usersId,
     },
   });
-  // return exios.delete("/api/delete-users", { id: usersId });
 };
 
 const getAllCodeService = (inputType) => {
@@ -38,8 +37,15 @@ const editUserSer = (data) => {
 // };
 
 const getTopDoctorHomeService = (limit) => {
-  // return axios.get(`/api/topdoctor-home?limit=${limit}`);
   return exios.get(`/api/topdoctor-home?limit=${limit}`);
+};
+
+const getAllDoctors = () => {
+  return exios.get(`/api/get-all-doctor`);
+};
+
+const saveDetailDoctorService = (data) => {
+  return exios.post("/api/save-infor-doctor", data);
 };
 
 export {
@@ -50,6 +56,8 @@ export {
   getAllCodeService,
   editUserSer,
   getTopDoctorHomeService,
+  getAllDoctors,
+  saveDetailDoctorService,
 };
 
 // axios => để request từ client lên server.
