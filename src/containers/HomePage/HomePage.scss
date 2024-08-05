@@ -91,14 +91,11 @@
 // Medical
 .section-share,
 .section-medicales {
-  // background: #f5f5f5;
-
   .section-body {
     .medical-customize {
       border: 2px solid #dee2e6;
       width: 270px !important;
       height: 250px;
-      // background: #e9ecef;
       margin-right: 10px;
       display: flex !important;
       flex-direction: column;
@@ -136,13 +133,10 @@
 .section-featured-doctor {
   .section-body {
     .doctor-customize {
-      // border: 2px solid #dee2e6;
       width: 270px !important;
       height: 230px;
-      // background: #e9ecef;
       margin-right: 10px;
       border-radius: 10px;
-      cursor: pointer;
 
       .outer-backg {
         display: flex;
@@ -158,6 +152,7 @@
           background-size: cover;
           background-position: center center;
           margin: auto;
+          cursor: pointer;
           padding: 10px 0 !important;
 
           &.section-doctor {

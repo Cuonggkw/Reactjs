@@ -26,7 +26,8 @@ class HomePage extends Component {
     };
     return (
       <div>
-        <HomeHeader />
+        {/* Cách lấy thanh header */}
+        <HomeHeader isShowBanner={true} />
 
         <Specialize settings={settings} />
 

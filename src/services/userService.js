@@ -35,7 +35,6 @@ const editUserSer = (data) => {
 //     res.sendFile(__dirname + "/bin/index.html"); // change the path to your index.html
 //   });
 // };
-
 const getTopDoctorHomeService = (limit) => {
   return exios.get(`/api/topdoctor-home?limit=${limit}`);
 };

@@ -4,7 +4,7 @@ import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import * as actions from "../../../store/actions";
 import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from "../../../utils";
-
+import { withRouter } from "react-router";
 class FeaturedDoctor extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +24,12 @@ class FeaturedDoctor extends Component {
   componentDidMount() {
     this.props.loadTopDoctors();
   }
+
+  handleViewDetailDoctor = (doctor) => {
+    console.log("Hoi dan it chanel view infor:", doctor);
+    this.props.history.push(`/detail-doctor/${doctor.id}`);
+  };
+
   render() {
     let arrDoctors = this.state.arrDoctors;
     let { language } = this.props;
@@ -50,10 +56,14 @@ class FeaturedDoctor extends Component {
                       "binary"
                     );
                   }
-                  let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
-                  let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                  let nameEn = `${item.positionData.valueEn}, ${item.lastName} ${item.firstName}`;
+                  let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
                   return (
-                    <div className="doctor-customize" key={index}>
+                    <div
+                      className="doctor-customize"
+                      key={index}
+                      onClick={() => this.handleViewDetailDoctor(item)}
+                    >
                       <div className="outer-backg">
                         <div
                           className="bg-image section-doctor"
@@ -93,4 +103,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FeaturedDoctor);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(FeaturedDoctor)
+);
