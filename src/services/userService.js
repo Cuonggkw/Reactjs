@@ -47,6 +47,10 @@ const saveDetailDoctorService = (data) => {
   return exios.post("/api/save-infor-doctor", data);
 };
 
+const getDetailInforDoctor = (id) => {
+  return exios.get(`/api/get-detail-doctor-by-id?id=${id}`);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -57,6 +61,7 @@ export {
   getTopDoctorHomeService,
   getAllDoctors,
   saveDetailDoctorService,
+  getDetailInforDoctor,
 };
 
 // axios => để request từ client lên server.

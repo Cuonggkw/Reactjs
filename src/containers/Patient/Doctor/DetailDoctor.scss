@@ -1,4 +1,39 @@
 .doctor-detail-container {
   height: 500px;
   border: 1px solid burlywood;
+  margin: 0 50px;
+
+  .intro-doctor {
+    display: flex;
+    border: 1px solid black;
+
+    .content-left {
+      width: 30%;
+      background: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 10px 20px;
+    }
+    .content-right {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      padding-left: 15px;
+
+      .up {
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        padding-top: 15px;
+      }
+
+      .down {
+        font-family: sans-serif;
+        padding-top: 10px;
+      }
+    }
+  }
 }
