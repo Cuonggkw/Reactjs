@@ -1,11 +1,7 @@
 .doctor-detail-container {
-  height: 500px;
-  border: 1px solid burlywood;
-  margin: 0 50px;
-
   .intro-doctor {
+    margin: 0 50px;
     display: flex;
-    border: 1px solid black;
 
     .content-left {
       width: 30%;
@@ -20,6 +16,8 @@
     .content-right {
       width: 70%;
       display: flex;
+      margin-top: 15px;
+      font-size: 15px;
       flex-direction: column;
       padding-left: 15px;
 
@@ -35,5 +33,18 @@
         padding-top: 10px;
       }
     }
+  }
+
+  .detail-infor-doctor {
+    margin-top: 20px;
+    background: #e9ecef;
+    padding: 20px 50px;
+    font-size: 15px;
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+  }
+
+  .comment-doctor {
+    height: 100px;
   }
 }

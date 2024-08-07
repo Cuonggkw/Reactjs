@@ -1,3 +1,5 @@
+// adminMenu => System.js
+
 export const adminMenu = [
   {
     // Quản lý user
@@ -18,12 +20,15 @@ export const adminMenu = [
         link: "/system/manage-doctor",
       },
 
+      // {
+      //   name: "menu.admin.manage-admin",
+      //   link: "/system/user-admin",
+      // },
       {
-        name: "menu.admin.manage-admin",
-        link: "/system/user-admin",
+        // Quản lý kế hoạch khám bệnh của doctor
+        name: "menu.doctor.manage-shedule",
+        link: "/doctor/manage-schedule",
       },
-
-      // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
     ],
   },
 
@@ -56,6 +61,20 @@ export const adminMenu = [
       {
         name: "menu.admin.manage-handbook",
         link: "/system/manage-handbook",
+      },
+    ],
+  },
+];
+
+export const doctorMenu = [
+  {
+    name: "menu.admin.manage-user",
+    menus: [
+      {
+        // Quản lý kế hoạch khám bệnh của doctor
+
+        name: "menu.doctor.manage-shedule",
+        link: "/doctor/manage-schedule",
       },
     ],
   },

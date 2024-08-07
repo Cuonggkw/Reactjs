@@ -26,8 +26,9 @@ class FeaturedDoctor extends Component {
   }
 
   handleViewDetailDoctor = (doctor) => {
-    console.log("Hoi dan it chanel view infor:", doctor);
-    this.props.history.push(`/detail-doctor/${doctor.id}`);
+    if (this.props.history) {
+      this.props.history.push(`/detail-doctor/${doctor.id}`);
+    }
   };
 
   render() {

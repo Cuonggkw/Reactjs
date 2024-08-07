@@ -13,6 +13,7 @@ import {
 } from "../hoc/authentication";
 
 import { path } from "../utils";
+import Doctor from "../routes/Doctor.js";
 
 import Home from "../routes/Home";
 import Login from "./Auth/Login";
@@ -62,6 +63,10 @@ class App extends Component {
                   <Route
                     path={path.SYSTEM}
                     component={userIsAuthenticated(System)}
+                  />
+                  <Route
+                    path={"/doctor/"}
+                    component={userIsAuthenticated(Doctor)}
                   />
                   <Route path={path.HOMEPAGE} component={HomePage} />
                   <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
