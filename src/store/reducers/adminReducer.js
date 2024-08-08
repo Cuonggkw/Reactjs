@@ -8,9 +8,11 @@ const initialState = {
   users: [],
   topDoctors: [],
   allDoctor: [],
+  allSchedule: [],
 };
 
 const adminReducer = (state = initialState, action) => {
+  // console.log("Chao cac ban:", state);
   switch (action.type) {
     case actionTypes.FETCH_GENDER_START:
       let copyState = { ...state };
@@ -89,6 +91,16 @@ const adminReducer = (state = initialState, action) => {
       };
     case actionTypes.FETCH_ALL_DOCTOR_FAILDED:
       state.allDoctor = [];
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_ALLCODE_SCHEDULE_SUCCESS:
+      state.allSchedule = action.dataTime;
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_ALLCODE_SCHEDULE_FAILDED:
+      state.allSchedule = [];
       return {
         ...state,
       };

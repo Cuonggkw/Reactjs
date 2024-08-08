@@ -58,7 +58,14 @@ class Login extends Component {
           });
         }
       }
-      console.log("Hello", e.response);
+      // console.log("Hello", e.response);
+    }
+  };
+
+  handleKeyDown = (event) => {
+    console.log("Check keydown", event);
+    if (event.key === "Enter") {
+      this.handleLogin();
     }
   };
   // Cần quan tâm hàm render
@@ -87,6 +94,7 @@ class Login extends Component {
                 className="form-control"
                 placeholder="Password"
                 onChange={(event) => this.handleOnChangePassword(event)}
+                onKeyDown={(event) => this.handleKeyDown(event)}
                 // value={this.state.password}
               />
             </div>
