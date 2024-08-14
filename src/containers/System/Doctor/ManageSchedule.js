@@ -10,6 +10,7 @@ import moment from "moment";
 import { times } from "lodash";
 import { toast } from "react-toastify";
 import _ from "lodash";
+import { saveBulkCreateSchedule } from "../../../services/userService";
 
 class ManageShedule extends Component {
   constructor(props) {
@@ -92,11 +93,10 @@ class ManageShedule extends Component {
       this.setState({
         rangeTime: rangeTime,
       });
-      // console.log("Hoi dan it check time:", rangeTime);
     }
   };
 
-  handleSaveSchedule = () => {
+  handleSaveSchedule = async () => {
     let { rangeTime, selectedDoctor, currentDate } = this.state;
     let result = [];
     if (!currentDate) {
@@ -107,7 +107,10 @@ class ManageShedule extends Component {
       toast.error("Invalid select doctor!");
       return;
     }
-    let formateDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+    // let formateDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+    // let formateDate = moment(currentDate).unix();
+
+    let formateDate = new Date(currentDate).getTime();
     if (rangeTime && rangeTime.length > 0) {
       let selectedTime = rangeTime.filter((item) => item.isSelected === true);
       if (selectedTime && selectedTime.length > 0) {
@@ -115,7 +118,7 @@ class ManageShedule extends Component {
           let object = {};
           object.doctorId = selectedDoctor.value;
           object.date = formateDate;
-          object.time = item.keyMap;
+          object.timeType = item.keyMap;
           result.push(object);
         });
       } else {
@@ -123,12 +126,16 @@ class ManageShedule extends Component {
         return;
       }
     }
+    let res = await saveBulkCreateSchedule({
+      arrSchedule: result,
+      doctorId: selectedDoctor.value,
+      formateDate: formateDate,
+    });
 
-    console.log("Check result:", result);
+    // console.log("Check result:", result);
   };
 
   render() {
-    // console.log("Hoi dan it check state: ", this.state);
     let { rangeTime } = this.state;
     let { language } = this.props;
     return (

@@ -4,8 +4,10 @@ import HomeHeader from "../../HomePage/HomeHeader";
 import "./DetailDoctor.scss";
 import { getDetailInforDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
+import DoctorSchedule from "./DoctorSchedule";
 // react-router-dom => is a library
 
+// Hiển thị thông tin doctor
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +35,6 @@ class DetailDoctor extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {}
 
   render() {
-    // console.log("Hoi dan it channel", this.state);
     let { language } = this.props;
     let { detailDoctor } = this.state;
     let nameVi = "",
@@ -64,12 +65,19 @@ class DetailDoctor extends Component {
                 {detailDoctor &&
                   detailDoctor.Markdown &&
                   detailDoctor.Markdown.description && (
-                    <span>{detailDoctor.Markdown.description}</span>
+                    <span className="title-down">
+                      {detailDoctor.Markdown.description}
+                    </span>
                   )}
               </div>
             </div>
           </div>
-          <div className="schedule-doctor"></div>
+          <div className="schedule-doctor">
+            <div className="content-left">
+              <DoctorSchedule />
+            </div>
+            <div className="content-right"></div>
+          </div>
           <div className="detail-infor-doctor">
             {detailDoctor &&
               detailDoctor.Markdown &&

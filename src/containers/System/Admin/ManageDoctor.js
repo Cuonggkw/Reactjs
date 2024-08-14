@@ -13,6 +13,8 @@ import { getDetailInforDoctor } from "../../../services/userService";
 
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
+// CREATE INFORMATION DOCTOR
+
 class ManageDoctor extends Component {
   constructor(props) {
     // constructor represent class

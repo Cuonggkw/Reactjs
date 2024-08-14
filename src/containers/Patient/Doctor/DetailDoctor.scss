@@ -1,4 +1,6 @@
 .doctor-detail-container {
+  height: 500px;
+
   .intro-doctor {
     margin: 0 50px;
     display: flex;
@@ -35,13 +37,28 @@
     }
   }
 
+  .schedule-doctor {
+    margin: 0 70px;
+    display: flex;
+    height: 200px;
+    border: 1px solid red;
+
+    .content-left {
+      width: 50%;
+      border-right: 1px solid black;
+    }
+    .content-right {
+      width: 50%;
+    }
+  }
+
   .detail-infor-doctor {
     margin-top: 20px;
     background: #e9ecef;
     padding: 20px 50px;
     font-size: 15px;
-    border-top: 1px solid #ced4da;
-    border-bottom: 1px solid #ced4da;
+    border-top: 1.5px solid #ced4da;
+    border-bottom: 1.5px solid #ced4da;
   }
 
   .comment-doctor {

@@ -51,6 +51,10 @@ const getDetailInforDoctor = (id) => {
   return exios.get(`/api/get-detail-doctor-by-id?id=${id}`);
 };
 
+const saveBulkCreateSchedule = (data) => {
+  return exios.post("/api/bulk-create-schedule", data);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -62,6 +66,7 @@ export {
   getAllDoctors,
   saveDetailDoctorService,
   getDetailInforDoctor,
+  saveBulkCreateSchedule,
 };
 
 // axios => để request từ client lên server.
