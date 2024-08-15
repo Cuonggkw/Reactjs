@@ -55,6 +55,12 @@ const saveBulkCreateSchedule = (data) => {
   return exios.post("/api/bulk-create-schedule", data);
 };
 
+const getScheduleDoctorByDate = (doctorId, date) => {
+  return exios.get(
+    `/api/get-schedule-bydate?doctorId=${doctorId}&date=${date}`
+  );
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -67,6 +73,7 @@ export {
   saveDetailDoctorService,
   getDetailInforDoctor,
   saveBulkCreateSchedule,
+  getScheduleDoctorByDate,
 };
 
 // axios => để request từ client lên server.
