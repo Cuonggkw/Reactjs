@@ -212,7 +212,6 @@ class UserRedux extends Component {
       actions: CRUD_ACTIONS.EDIT,
       userEditId: user.id,
     });
-    // console.log("Check handle edit user from parent", user);
   };
 
   render() {
