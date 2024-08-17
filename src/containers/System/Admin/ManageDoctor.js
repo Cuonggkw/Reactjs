@@ -117,10 +117,14 @@ class ManageDoctor extends Component {
     let { hasOlddata } = this.state;
     return (
       <div className="manage-doctor-container">
-        <div className="manage-doctor-title">Tạo thêm thông tin Doctor</div>
+        <div className="manage-doctor-title">
+          <FormattedMessage id="admin-doctor.manage-doctor.title-doctor" />
+        </div>
         <div className="more-infor">
           <div className="content-left form-group">
-            <label>Chọn bác sĩ:</label>
+            <label>
+              <FormattedMessage id="admin-doctor.manage-doctor.chosse-doctor" />
+            </label>
             <Select
               value={this.state.selectedOption}
               onChange={this.handleChangeSelect}
@@ -128,7 +132,9 @@ class ManageDoctor extends Component {
             />
           </div>
           <div className="content-right">
-            <label>Thông tin giới thiệu:</label>
+            <label>
+              <FormattedMessage id="admin-doctor.manage-doctor.intro" />
+            </label>
             <textarea
               className="form-control"
               rows="4"
@@ -152,9 +158,13 @@ class ManageDoctor extends Component {
           onClick={() => this.handleSaveContentMarkdown()}
         >
           {hasOlddata === true ? (
-            <span>Lưu thông tin</span>
+            <span>
+              <FormattedMessage id="admin-doctor.manage-doctor.save-infor" />
+            </span>
           ) : (
-            <span>Tạo thông tin</span>
+            <span>
+              <FormattedMessage id="admin-doctor.manage-doctor.add-infor" />
+            </span>
           )}
         </button>
       </div>

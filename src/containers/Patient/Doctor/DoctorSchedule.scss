@@ -1,28 +1,81 @@
 .doctor-schedule-container {
-  border: 1px solid red;
+  // border-right: 1px solid #9c36b5;
+  height: 100%;
+
   .all-schedule {
+    margin-bottom: 20px;
+    select {
+      font-size: 15px;
+      outline: none;
+      font-weight: 500;
+      cursor: pointer;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      color: #1c7ed6;
+      font-weight: bold;
+      border: none;
+      border-bottom: 1px solid #4dabf7;
+
+      option {
+        cursor: pointer;
+      }
+    }
   }
   .all-available-time {
     .calendar {
       margin: 10px 0;
+
       i {
         font-size: 16px;
         // margin-right: 10px;
       }
+
       span {
         text-transform: uppercase;
         margin-left: 10px;
       }
     }
     .time-content {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      button {
-        padding: 5px 10px;
-        border: none;
-        outline: none;
-        background-color: #adb5bd;
+      .time-content-btn {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        button {
+          padding: 10px 10px;
+          border: none;
+          font-size: 14px;
+          font-weight: 600;
+          min-width: 120px;
+          outline: none;
+          color: #495057;
+          border-radius: 2px;
+          background-color: #adb5bd;
+
+          &:hover {
+            color: white;
+            background-color: #3bc9db;
+          }
+        }
+        .btn-vie {
+          min-width: 120px;
+        }
+
+        .btn-en {
+          min-width: 160px;
+        }
+
+        .titile-no {
+          font-family: initial;
+          font-size: 20px;
+          font-weight: 500;
+          color: #868e96;
+          font-style: italic;
+        }
+      }
+      .book-free {
+        font-size: 16px;
+        margin-top: 10px;
       }
     }
   }

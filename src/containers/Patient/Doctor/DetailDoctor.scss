@@ -40,12 +40,12 @@
   .schedule-doctor {
     margin: 0 70px;
     display: flex;
-    height: 200px;
-    border: 1px solid red;
+    padding: 10px 0;
+    min-height: 200px;
 
     .content-left {
       width: 50%;
-      border-right: 1px solid black;
+      border-right: 1px solid #ced4da;
     }
     .content-right {
       width: 50%;

@@ -48,12 +48,6 @@ class ManageShedule extends Component {
         rangeTime: data,
       });
     }
-    // if (prevProps.language !== this.props.language) {
-    //   let dataSelect = this.buildDataInputSelect(this.props.allDoctor);
-    //   this.setState({
-    //     listDoctor: dataSelect,
-    //   });
-    // }
   }
 
   buildDataInputSelect = (data) => {
@@ -107,8 +101,6 @@ class ManageShedule extends Component {
       toast.error("Invalid select doctor!");
       return;
     }
-    // let formateDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
-    // let formateDate = moment(currentDate).unix();
 
     let formateDate = new Date(currentDate).getTime();
     if (rangeTime && rangeTime.length > 0) {
@@ -132,12 +124,18 @@ class ManageShedule extends Component {
       formateDate: formateDate,
     });
 
-    // console.log("Check result:", result);
+    if (res && res.errCode === 0) {
+      toast.success("Save infor success!");
+    } else {
+      toast.error("error saveBulkScheduleDoctor!");
+      console.log("saveBulkScheduleDoctor >>> error:", res);
+    }
   };
 
   render() {
     let { rangeTime } = this.state;
     let { language } = this.props;
+    let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     return (
       <div className="manage-schedule-container">
         <div className="schedule-title">
@@ -164,7 +162,7 @@ class ManageShedule extends Component {
                 onChange={this.handleOnChangeDatePicker}
                 className="form-control"
                 selected={this.state.currentDate}
-                minDate={new Date()}
+                minDate={yesterday}
               />
             </div>
             <div className="col-12 pick-hour-container">
