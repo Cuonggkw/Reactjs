@@ -61,6 +61,10 @@ const getScheduleDoctorByDate = (doctorId, date) => {
   );
 };
 
+const getExtraInforDoctorById = (doctorId) => {
+  return exios.get(`/api/get-extra-doctor-infor-by-id?doctorId=${doctorId}`);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -74,6 +78,7 @@ export {
   getDetailInforDoctor,
   saveBulkCreateSchedule,
   getScheduleDoctorByDate,
+  getExtraInforDoctorById,
 };
 
 // axios => để request từ client lên server.

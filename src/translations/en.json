@@ -81,7 +81,7 @@
   "admin-doctor": {
     "manage-doctor": {
       "title-doctor": "Create more Doctor information",
-      "chosse-doctor": "Choose a doctor:",
+      "chosse-doctor": "Choose a doctor",
       "intro": "Introduction:",
       "save-infor": "Save information",
       "add-infor": "Create information",

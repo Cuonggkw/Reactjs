@@ -26,7 +26,6 @@ class Login extends Component {
       // Update change state React
       username: event.target.value,
     });
-    // console.log(event.target.value);
   };
 
   handleOnChangePassword = (event) => {
@@ -58,12 +57,10 @@ class Login extends Component {
           });
         }
       }
-      // console.log("Hello", e.response);
     }
   };
 
   handleKeyDown = (event) => {
-    console.log("Check keydown", event);
     if (event.key === "Enter") {
       this.handleLogin();
     }
@@ -95,7 +92,6 @@ class Login extends Component {
                 placeholder="Password"
                 onChange={(event) => this.handleOnChangePassword(event)}
                 onKeyDown={(event) => this.handleKeyDown(event)}
-                // value={this.state.password}
               />
             </div>
             <div className="col-12" style={{ color: "#e03131" }}>

@@ -30,7 +30,6 @@ class DoctorSchedule extends Component {
     this.setState({
       allDays: allDays,
     });
-    // console.log("Check allDays:", allDays);
     // want use english then add variable local behind moment.
   }
 
@@ -153,7 +152,7 @@ class DoctorSchedule extends Component {
                 <div className="book-free">
                   <span>
                     <FormattedMessage id="patient.detail-doctor.chosse" />{" "}
-                    <i class="far fa-hand-point-up"></i>{" "}
+                    <i className="far fa-hand-point-up"></i>{" "}
                     <FormattedMessage id="patient.detail-doctor.book-free" />
                   </span>
                 </div>

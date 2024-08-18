@@ -37,14 +37,12 @@ class UserManage extends Component {
         arrUsers: respone.users,
       });
     }
-    // console.log("get user from node.js:", respone);
   };
 
   handleAddNewUser = () => {
     this.setState({
       isOpenModal: true,
     });
-    // alert("click me");
   };
 
   toggleUserModal = () => {
@@ -89,16 +87,13 @@ class UserManage extends Component {
       } else {
         alert(res.message);
       }
-      //   console.log(res);
     } catch (e) {
       console.log(e);
     }
-    // console.log("click delete", users);
   };
 
   // Update users
   handleEditUser = (user) => {
-    // console.log("Check edit users", user);
     this.setState({
       isOpenModalEdit: true,
       userEdit: user,
@@ -114,7 +109,6 @@ class UserManage extends Component {
         });
 
         await this.getAllUsersReact();
-        // console.log("Click save user", res);
       } else {
         alert(res.errCode);
       }
@@ -124,7 +118,6 @@ class UserManage extends Component {
   };
 
   render() {
-    // console.log("check render", this.state);
     let arrUsers = this.state.arrUsers;
     return (
       <div className="users-container">

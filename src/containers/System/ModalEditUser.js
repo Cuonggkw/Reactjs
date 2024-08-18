@@ -31,7 +31,6 @@ class ModalEditUser extends Component {
         address: users.address,
       });
     }
-    // console.log("didmount edit modal", this.props.currentEditUser);
   }
 
   toggle = () => {
@@ -86,7 +85,6 @@ class ModalEditUser extends Component {
   };
   render() {
     // son
-    // console.log("didmount edit:", this.props.currentEditUser);
 
     return (
       <Modal

@@ -32,9 +32,7 @@ class ModalUser extends Component {
     });
   }
 
-  componentDidMount() {
-    // console.log("mouting modal");
-  }
+  componentDidMount() {}
 
   toggle = () => {
     // kế thừa bên  lớp cha(UserManage)
@@ -63,7 +61,6 @@ class ModalUser extends Component {
     this.setState({
       ...copyState,
     });
-    // console.log(event.target.value, id);
   };
 
   checkValideInput = () => {
@@ -89,7 +86,6 @@ class ModalUser extends Component {
   };
   render() {
     // son
-    // console.log("check child props", this.props);
     return (
       <Modal
         isOpen={this.props.isOpenModal}
