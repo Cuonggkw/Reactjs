@@ -76,6 +76,14 @@
       "no-schedule": "The doctor is not available today.",
       "chosse": "Chosse",
       "book-free": "and book (free)"
+    },
+    "extra-infor-doctor": {
+      "text-address": "ADDRESS FOR EXAMINATION",
+      "price": "EXAMINATION PRICE:",
+      "detail": "See details",
+      "price-left": "Examination fee",
+      "payment": "Hospitals have payment methods: ",
+      "hide-price": "Hide price list"
     }
   },
   "admin-doctor": {

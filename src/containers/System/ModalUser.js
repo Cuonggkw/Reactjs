@@ -51,9 +51,6 @@ class ModalUser extends Component {
     //   {
     //     ...this.state,
     //   },
-    //   () => {
-    //     console.log("Check bad state:", this.state);
-    //   }
     // );
     // good code
     let copyState = { ...this.state };

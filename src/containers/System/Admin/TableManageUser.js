@@ -44,7 +44,6 @@ class TableManageUser extends Component {
 
   handleEditUser = (item) => {
     this.props.handleEditUserFromParent(item);
-    // console.log("Hoi dan it user edit:", item);
   };
 
   handleDeleteUser = (item) => {
@@ -52,7 +51,6 @@ class TableManageUser extends Component {
   };
 
   render() {
-    // console.log("Check state:", this.state.usersRedux);
     let arrUsers = this.state.usersRedux;
     return (
       <React.Fragment>

@@ -100,7 +100,6 @@ class UserRedux extends Component {
     let file = data[0];
     if (file) {
       let base64 = await CommonUtils.getBase64(file);
-      // console.log("Base 64 imgae:", base64);
       let objectUrl = URL.createObjectURL(file);
       this.setState({
         previewImgURL: objectUrl,
@@ -230,7 +229,6 @@ class UserRedux extends Component {
       role,
       avatar,
     } = this.state;
-    // console.log("Phai check render Redux:", this.props.genderRedux);
     return (
       <div className="user-redux-container">
         <div className="title">User Redux hoi dan IT</div>

@@ -15,7 +15,6 @@ const initialState = {
 };
 
 const adminReducer = (state = initialState, action) => {
-  // console.log("Chao cac ban:", state);
   switch (action.type) {
     case actionTypes.FETCH_GENDER_START:
       let copyState = { ...state };
@@ -110,7 +109,7 @@ const adminReducer = (state = initialState, action) => {
     case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS:
       state.allRequiredDoctorInfor = action.data;
 
-      // console.log("Hoi dan it check all required action", action);
+
       return {
         ...state,
       };

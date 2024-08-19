@@ -128,7 +128,7 @@ class ManageShedule extends Component {
       toast.success("Save infor success!");
     } else {
       toast.error("error saveBulkScheduleDoctor!");
-      console.log("saveBulkScheduleDoctor >>> error:", res);
+
     }
   };
 

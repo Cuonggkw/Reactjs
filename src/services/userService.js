@@ -65,6 +65,10 @@ const getExtraInforDoctorById = (doctorId) => {
   return exios.get(`/api/get-extra-doctor-infor-by-id?doctorId=${doctorId}`);
 };
 
+const getProfileDoctorById = (doctorId) => {
+  return exios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -79,6 +83,7 @@ export {
   saveBulkCreateSchedule,
   getScheduleDoctorByDate,
   getExtraInforDoctorById,
+  getProfileDoctorById,
 };
 
 // axios => để request từ client lên server.

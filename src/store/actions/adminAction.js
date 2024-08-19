@@ -151,7 +151,6 @@ export const deleteAUser = (userId) => {
   return async (dispatch, getState) => {
     try {
       let res = await deleteUserSer(userId);
-      // console.log("Hoi dan it check creat:", res);
       if (res && res.errCode === 0) {
         toast.success("👻 Delete a new user success!");
         dispatch(deleteUserSuccess());
@@ -215,7 +214,6 @@ export const fetchTopDoctor = () => {
           type: actionTypes.FETCH_TOP_DOCTOR_FAILDED,
         });
       }
-      // console.log("check res:", res);
     } catch (e) {
       console.log("FETCH_TOP_DOCTOR_FAILDED", e);
       dispatch({
@@ -239,7 +237,6 @@ export const fetchAllDoctors = () => {
           type: actionTypes.FETCH_ALL_DOCTOR_FAILDED,
         });
       }
-      // console.log("check res:", res);
     } catch (e) {
       console.log("FETCH_TOP_DOCTOR_FAILDED", e);
       dispatch({
@@ -289,7 +286,6 @@ export const fetchAllSchedule = () => {
           type: actionTypes.FETCH_ALLCODE_SCHEDULE_FAILDED,
         });
       }
-      // console.log("check res:", res);
     } catch (e) {
       console.log("FETCH_ALLCODE_SCHEDULE_FAILDED", e);
       dispatch({
