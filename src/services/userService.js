@@ -69,6 +69,10 @@ const getProfileDoctorById = (doctorId) => {
   return exios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`);
 };
 
+const postPatientAppointment = (data) => {
+  return exios.post("/api/patient-book-appointment", data);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -84,6 +88,7 @@ export {
   getScheduleDoctorByDate,
   getExtraInforDoctorById,
   getProfileDoctorById,
+  postPatientAppointment,
 };
 
 // axios => để request từ client lên server.

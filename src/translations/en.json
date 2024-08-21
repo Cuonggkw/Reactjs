@@ -84,6 +84,20 @@
       "price-left": "Examination fee",
       "payment": "Hospitals have payment methods: ",
       "hide-price": "Hide price list"
+    },
+    "booking-modal": {
+      "title": "Medical appointment information",
+      "fullName": "Full name:",
+      "phoneNumber": "Phone number:",
+      "email": "Email:",
+      "address": "Contact address:",
+      "reason": "Reason for examination:",
+      "birthday": "Date of birth:",
+      "genders": "Gender",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "priceBooking": "Free appointment",
+      "examination": "Examination price:"
     }
   },
   "admin-doctor": {

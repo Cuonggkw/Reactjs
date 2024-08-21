@@ -14,8 +14,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { after } from "lodash";
 
 class HomePage extends Component {
-  // handleAfterChange = (event, slick, currentSlide) => {};
-
   render() {
     let settings = {
       dots: false,

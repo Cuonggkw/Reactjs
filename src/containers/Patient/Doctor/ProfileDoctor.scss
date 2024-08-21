@@ -1,7 +1,7 @@
 .profile-doctor-container {
   .intro-doctor {
     display: flex;
-    align-items: center;
+    // align-items: center;
 
     .content-left {
       background: center center;
@@ -31,4 +31,15 @@
       }
     }
   }
+}
+
+.date-title {
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #868e96;
+}
+
+.free-price {
+  font-family: sans-serif;
+  font-size: 15px;
 }

@@ -83,6 +83,20 @@
       "price-left": "Giá khám",
       "payment": "Bệnh viện có thanh toán bằng hình thức: ",
       "hide-price": "Ẩn bảng giá"
+    },
+    "booking-modal": {
+      "title": "Thông tin đặt lịch khám bệnh",
+      "fullName": "Họ và tên:",
+      "phoneNumber": "Số điện thoại:",
+      "email": "Email:",
+      "address": "Địa chỉ liên hệ:",
+      "reason": "Lý do khám:",
+      "birthday": "Ngày sinh:",
+      "genders": "Giới tính",
+      "confirm": "Xác nhận",
+      "cancel": "Thoát",
+      "priceBooking": "Miễn phí đặt lịch",
+      "examination": "Giá khám:"
     }
   },
   "admin-doctor": {
