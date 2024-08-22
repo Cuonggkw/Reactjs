@@ -7,11 +7,12 @@ import { FormattedMessage } from "react-intl";
 import _ from "lodash";
 import DatePicker from "../../../../components/Input/DatePicker";
 import * as actions from "../../../../store/actions";
-import { selectFilter } from "react-bootstrap-table2-filter";
 import { LANGUAGES } from "../../../../utils";
 import Select from "react-select";
 import { postPatientAppointment } from "../../../../services/userService";
 import { toast } from "react-toastify";
+import moment from "moment";
+
 // react-router-dom => is a library
 
 // Hiển thị thông tin doctor
@@ -65,11 +66,14 @@ class BookingModal extends Component {
     let result = [];
     let language = this.props.language;
 
+    // data => this.props.genders
     if (data && data.length > 0) {
+      // loop map = loop forEach.
       data.map((item) => {
         let object = {};
         object.label = language === LANGUAGES.VI ? item.valueVi : item.valueEn;
         object.value = item.keyMap;
+        // add one or more new elementsto the end ofthe array
         result.push(object);
       });
     }
@@ -77,15 +81,53 @@ class BookingModal extends Component {
   };
 
   handleChangeSelect = async (selectedOption) => {
-    this.setState({ selectedDoctor: selectedOption });
+    this.setState({ selectedGender: selectedOption });
+  };
+
+  buildDataBooking = (dataTime) => {
+    let { language } = this.props;
+    if (dataTime && !_.isEmpty(dataTime)) {
+      let time =
+        language === LANGUAGES.VI
+          ? dataTime.timeTypeData.valueVi
+          : dataTime.timeTypeData.valueEn;
+
+      // 1 giây = 1000 mili giây (1s = 1000ms)
+      // user "+" convert từ string sang kiểu int.
+      let date =
+        language === LANGUAGES.VI
+          ? moment.unix(+dataTime.date / 1000).format("dddd - DD/MM/YYYY")
+          : moment
+              .unix(+dataTime.date / 1000)
+              .locale("en")
+              .format("ddd - MM/DD/YYYY");
+
+      return `${time} - ${date}`;
+    }
+    return "";
+  };
+
+  buildDoctorName = (dataTime) => {
+    let { language } = this.props;
+    if (dataTime && !_.isEmpty(dataTime)) {
+      let name =
+        language === LANGUAGES.VI
+          ? `${dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`
+          : `${dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}`;
+
+      return name;
+    }
+    return "";
   };
 
   handleConfirmBooking = async () => {
     // !data.email || !data.doctorId || !data.date || !data.timeType
     let dateTime = new Date(this.state.birthday).getTime();
+    let timeString = this.buildDataBooking(this.props.dataTime);
+    let doctorName = this.buildDoctorName(this.props.dataTime);
     let res = await postPatientAppointment({
       fullName: this.state.fullName,
-      phoneNumber: this.state.phoneNumber,
+      phoneNumber: this.state.fullName,
       email: this.state.email,
       address: this.state.address,
       reason: this.state.reason,
@@ -93,6 +135,9 @@ class BookingModal extends Component {
       selectedGender: this.state.selectedGender.value,
       doctorId: this.state.doctorId,
       timeType: this.state.timeType,
+      language: this.props.language,
+      timeString: timeString,
+      doctorName: doctorName,
     });
     if (res && res.errCode === 0) {
       toast.success("Booking a new appintment succeed!");
@@ -103,7 +148,9 @@ class BookingModal extends Component {
     }
   };
 
+  // Onchange input values.
   handleOnchangeInput = (event, id) => {
+    // event.target.value => get input value.
     let valueInput = event.target.value;
     let stateCopy = { ...this.state };
     stateCopy[id] = valueInput;
@@ -266,6 +313,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  // mapDispatchToProps => mapStateToProps => constructor => mapStateToProps => componentDidUpdate => buildDataGender => componentDidUpdate
   return {
     getGenders: () => dispatch(actions.fetchGenderStart()),
   };
