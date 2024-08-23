@@ -73,6 +73,9 @@ const postPatientAppointment = (data) => {
   return exios.post("/api/patient-book-appointment", data);
 };
 
+const postVerifyBookAppointment = (data) => {
+  return exios.post("/api/verify-book-appointment", data);
+};
 export {
   handleLoginAPI,
   getAllUsers,
@@ -89,6 +92,7 @@ export {
   getExtraInforDoctorById,
   getProfileDoctorById,
   postPatientAppointment,
+  postVerifyBookAppointment,
 };
 
 // axios => để request từ client lên server.
