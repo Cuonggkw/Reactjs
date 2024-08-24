@@ -20,7 +20,7 @@
 }
 
 .slick-next {
-  z-index: 1000;
+  z-index: 0;
   border: 1px solid #ced4da !important;
   right: -20px !important;
   width: 50px !important;
@@ -46,46 +46,6 @@
 .section-share,
 .section-specialize {
   // background: #f5f5f5;
-
-  .section-body {
-    .section-customize {
-      width: 270px !important;
-      height: 250px;
-      border: 2px solid #dee2e6;
-      margin-right: 10px;
-      display: flex !important;
-      flex-direction: column;
-      border-radius: 10px;
-      cursor: pointer;
-
-      .bg-image {
-        height: 160px;
-        width: 230px;
-        background-repeat: no-repeat;
-
-        background-size: cover;
-        background-position: center center;
-        border-radius: 6px;
-        margin: auto;
-        padding: 10px 0 !important;
-
-        &.section-speciali {
-          background-image: url("../../assets/spcialize/co-xuong-khop.png");
-        }
-
-        &.section-medical {
-        }
-      }
-
-      h3 {
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
-    }
-  }
 }
 
 // Medical

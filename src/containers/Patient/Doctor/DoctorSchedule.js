@@ -6,7 +6,10 @@ import { FormattedMessage } from "react-intl";
 import localization from "moment/locale/vi";
 import { getScheduleDoctorByDate } from "../../../services/userService";
 import BookingModal from "./Modal/BookingModal";
+import Hello from "./Modal/Hello";
 import moment from "moment";
+// import { withRouter } from "react-router";
+
 // react-router-dom => is a library
 
 // Hiển thị thông tin doctor
@@ -113,6 +116,13 @@ class DoctorSchedule extends Component {
     });
   };
 
+  // Chuyển trang khác.
+  // handleViewDetailDoctor = (doctor) => {
+  //   if (this.props.history) {
+  //     this.props.history.push(`/booking-care/${doctor.id}`);
+  //   }
+  // };
+
   render() {
     let {
       allDays,
@@ -205,3 +215,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DoctorSchedule);
+
+// export default withRouter(
+//   connect(mapStateToProps, mapDispatchToProps)(DoctorSchedule)
+// );

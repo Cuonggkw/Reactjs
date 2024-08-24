@@ -1,0 +1,30 @@
+.specialty-child {
+  width: 260px !important;
+  height: 250px;
+  border: 2px solid #dee2e6;
+  margin-right: 10px;
+  display: flex !important;
+  flex-direction: column;
+  border-radius: 10px;
+  cursor: pointer;
+
+  .bg-image {
+    height: 160px;
+    width: 230px;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    background-position: center center;
+    border-radius: 6px;
+    margin: auto;
+    padding: 10px 0 !important;
+  }
+
+  .specialty-name {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}

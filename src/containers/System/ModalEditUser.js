@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 // library for handling objects and arr effciently
 import _ from "lodash";
-import { emitter } from "../../utils/emitter";
 class ModalEditUser extends Component {
   constructor(props) {
     // Kết thừa those props từ cha under.

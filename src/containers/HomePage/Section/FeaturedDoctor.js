@@ -77,7 +77,7 @@ class FeaturedDoctor extends Component {
                         <div className="name-doctor">
                           {language === LANGUAGES.VI ? nameVi : nameEn}
                         </div>
-                        <div className="text-eye">Khoa mắt 1</div>
+                        <div className="text-eye">Khoa mắt</div>
                       </div>
                     </div>
                   );

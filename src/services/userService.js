@@ -1,4 +1,3 @@
-import axios from "axios";
 import exios from "../axios";
 const handleLoginAPI = (email, password) => {
   // Axios là HTTP Client giúp xây dựng các ứng dụng kết nối từ nhiều nguồn dữ liệu dễ dàng.
@@ -73,8 +72,18 @@ const postPatientAppointment = (data) => {
   return exios.post("/api/patient-book-appointment", data);
 };
 
+// Verify email
 const postVerifyBookAppointment = (data) => {
   return exios.post("/api/verify-book-appointment", data);
+};
+
+// Specialty
+const createNewSpecialty = (data) => {
+  return exios.post("/api/create-new-specialty", data);
+};
+
+const getAllSpecialty = () => {
+  return exios.get(`/api/get-specialty`);
 };
 export {
   handleLoginAPI,
@@ -93,6 +102,8 @@ export {
   getProfileDoctorById,
   postPatientAppointment,
   postVerifyBookAppointment,
+  createNewSpecialty,
+  getAllSpecialty,
 };
 
 // axios => để request từ client lên server.

@@ -1,5 +1,7 @@
 .manage-doctor-container {
-  padding: 10px;
+  // padding: 10px;
+  margin: 15px;
+
   .manage-doctor-title {
     font-family: "Times New Roman", Times, serif;
     font-size: 25px;
@@ -13,6 +15,7 @@
   .more-infor {
     display: flex;
     gap: 15px;
+    justify-content: center;
     padding-bottom: 20px;
 
     .content-left {
@@ -20,8 +23,19 @@
     }
 
     .content-right {
-      width: 70%;
+      width: 60%;
     }
+  }
+
+  .more-infor-extra {
+    display: flex;
+    justify-content: center;
+  }
+
+  .clinic {
+    // display: flex;
+    margin-left: 40px;
+    // justify-content: center;
   }
 
   .manage-doctor-editor {
