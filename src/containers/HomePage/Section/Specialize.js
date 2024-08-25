@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import "./Specialize.scss";
+import { withRouter } from "react-router";
 
 import { getAllSpecialty } from "../../../services/userService";
 class Specialize extends Component {
@@ -21,6 +22,13 @@ class Specialize extends Component {
       });
     }
   }
+
+  handleViewDetailSpecialty = (item) => {
+    if (this.props.history) {
+      this.props.history.push(`/detail-specialty/${item.id}`);
+    }
+  };
+
   render() {
     let { dataSpecialty } = this.state;
     return (
@@ -43,6 +51,7 @@ class Specialize extends Component {
                     <div
                       className="section-customize specialty-child"
                       key={index}
+                      onClick={() => this.handleViewDetailSpecialty(item)}
                     >
                       <div
                         className="bg-image section-speciali"
@@ -65,7 +74,7 @@ class Specialize extends Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    language: state.app.language, // language take it over props
+    language: state.app.language,
     isLoggedIn: state.user.isLoggedIn,
   };
 };
@@ -75,4 +84,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 // Help connect between react with redux
-export default connect(mapStateToProps, mapDispatchToProps)(Specialize);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Specialize)
+);

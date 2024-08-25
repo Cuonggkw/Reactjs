@@ -18,7 +18,16 @@ class DoctorExtraInfor extends Component {
   }
 
   // run 1 duy nhất
-  async componentDidMount() {}
+  async componentDidMount() {
+    if (this.props.doctorIdFromParent) {
+      let res = await getExtraInforDoctorById(this.props.doctorIdFromParent);
+      if (res && res.errCode === 0) {
+        this.setState({
+          extraInfor: res.data,
+        });
+      }
+    }
+  }
 
   // Chạy lại nhiều lần.
   async componentDidUpdate(prevProps, prevState, snapshot) {

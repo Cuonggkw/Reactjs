@@ -85,6 +85,12 @@ const createNewSpecialty = (data) => {
 const getAllSpecialty = () => {
   return exios.get(`/api/get-specialty`);
 };
+
+const getAllDetailSpecialtyById = (data) => {
+  return exios.get(
+    `/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`
+  );
+};
 export {
   handleLoginAPI,
   getAllUsers,
@@ -104,6 +110,7 @@ export {
   postVerifyBookAppointment,
   createNewSpecialty,
   getAllSpecialty,
+  getAllDetailSpecialtyById,
 };
 
 // axios => để request từ client lên server.
