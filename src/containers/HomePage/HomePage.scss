@@ -48,46 +48,6 @@
   // background: #f5f5f5;
 }
 
-// Medical
-.section-share,
-.section-medicales {
-  .section-body {
-    .medical-customize {
-      border: 2px solid #dee2e6;
-      width: 270px !important;
-      height: 250px;
-      margin-right: 10px;
-      display: flex !important;
-      flex-direction: column;
-      border-radius: 10px;
-      cursor: pointer;
-
-      .bg-image {
-        height: 170px;
-        width: 230px;
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        margin: auto;
-        padding: 10px 0 !important;
-
-        &.section-medical {
-          background-image: url("../../assets/medical/cho-gay.jpg");
-        }
-      }
-
-      h3 {
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-
 // FeaturedDoctor
 .section-share,
 .section-featured-doctor {

@@ -91,6 +91,18 @@ const getAllDetailSpecialtyById = (data) => {
     `/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`
   );
 };
+
+// Clinic
+const createNewClinic = (data) => {
+  return exios.post("/api/create-new-clinic", data);
+};
+const getAllClinic = () => {
+  return exios.get("/api/get-clinic");
+};
+const getAllDetailClinicById = (data) => {
+  return exios.get(`/api/get-detail-clinic-by-id?id=${data.id}`);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -111,6 +123,9 @@ export {
   createNewSpecialty,
   getAllSpecialty,
   getAllDetailSpecialtyById,
+  createNewClinic,
+  getAllClinic,
+  getAllDetailClinicById,
 };
 
 // axios => để request từ client lên server.
