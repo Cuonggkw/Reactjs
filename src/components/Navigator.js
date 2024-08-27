@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 
+
 import "./Navigator.scss";
 
 class MenuGroup extends Component {
@@ -162,20 +163,6 @@ class Navigator extends Component {
   componentDidMount() {
     this.checkActiveMenu();
   }
-
-  // componentWillReceiveProps(nextProps, prevState) {
-  //     const { location, setAccountMenuPath, setSettingMenuPath } = this.props;
-  //     const { location: nextLocation } = nextProps;
-  //     if (location !== nextLocation) {
-  //         let pathname = nextLocation && nextLocation.pathname;
-  //         if ((pathname.startsWith('/account/') || pathname.startsWith('/fds/account/'))) {
-  //             setAccountMenuPath(pathname);
-  //         }
-  //         if (pathname.startsWith('/settings/')) {
-  //             setSettingMenuPath(pathname);
-  //         };
-  //     };
-  // };
 
   componentDidUpdate(prevProps, prevState) {
     const { location } = this.props;

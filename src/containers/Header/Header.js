@@ -43,7 +43,8 @@ class Header extends Component {
       <div className="header-container">
         {/* thanh navigator */}
         <div className="header-tabs-container">
-          <Navigator menus={this.state.menuApp} />
+          {/* <Navigator /> */}
+          <Navigator menus={adminMenu} />
         </div>
 
         <div className="language">
@@ -68,7 +69,6 @@ class Header extends Component {
             EN
           </span>
 
-          {/* nút logout */}
           <div
             className="btn btn-logout"
             onClick={processLogout}

@@ -4,11 +4,34 @@
   .description-specialty {
     background-color: white !important;
     padding: 10px;
+    font-family: sans-serif;
+    font-size: 15px;
     margin: 15px 0;
 
-    h3 {
+    .section-medical {
+      width: 30%;
+      height: 30%;
+      background: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .clinic-name {
+      margin-top: 10px;
+      display: flex;
+      font-size: 25px;
+      font-weight: 600;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
       font-family: sans-serif;
       font-size: 20px;
+      color: #228be6;
+      font-weight: 600;
+      padding-top: 10px;
     }
   }
 

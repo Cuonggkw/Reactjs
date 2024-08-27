@@ -9,6 +9,7 @@ import ProfileDoctor from "../Doctor/ProfileDoctor";
 import {
   getAllDetailClinicById,
   getAllCodeService,
+  getAllClinic,
 } from "../../../services/userService";
 
 import { FormattedMessage } from "react-intl";
@@ -24,11 +25,18 @@ class DetailClinic extends Component {
       arrDoctorId: [],
       dataDetailClinic: {},
       listProvince: [],
+      dataClinics: [],
     };
   }
 
   // run 1 duy nhất
   async componentDidMount() {
+    let result = await getAllClinic();
+    if (result && result.errCode === 0) {
+      this.setState({
+        dataClinics: result.data.image ? result.data.image : [],
+      });
+    }
     if (
       this.props.match &&
       this.props.match.params &&
@@ -67,7 +75,7 @@ class DetailClinic extends Component {
   }
 
   render() {
-    let { arrDoctorId, dataDetailClinic } = this.state;
+    let { arrDoctorId, dataDetailClinic, dataClinics } = this.state;
     let { language } = this.props;
 
     return (
@@ -78,7 +86,24 @@ class DetailClinic extends Component {
           <div className="description-specialty">
             {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
               <>
-                <div>{dataDetailClinic.name}</div>
+                <div>
+                  <div className="clinic-img">
+                    {" "}
+                    {dataDetailClinic &&
+                      dataDetailClinic.length > 0 &&
+                      dataDetailClinic.map((item, index) => {
+                        return (
+                          <div
+                            className="bg-image section-medical"
+                            style={{
+                              backgroundImage: `url(${item.image}`,
+                            }}
+                          ></div>
+                        );
+                      })}
+                  </div>
+                  <div className="clinic-name">{dataDetailClinic.name}</div>
+                </div>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: dataDetailClinic.descriptionHTML,

@@ -30,6 +30,7 @@ class UserRedux extends Component {
       gender: "",
       position: "",
       role: "",
+      specialty: "",
       avatar: "",
 
       actions: "",
@@ -84,6 +85,8 @@ class UserRedux extends Component {
         lastName: "",
         phonenumber: "",
         address: "",
+        specialty: "",
+
         gender: arrGender && arrGender.length > 0 ? arrGender[0].keyMap : "",
         position:
           arrPosition && arrPosition.length > 0 ? arrPosition[0].keyMap : "",
@@ -133,6 +136,7 @@ class UserRedux extends Component {
         roleId: this.state.role,
         positionId: this.state.position,
         avatar: this.state.avatar,
+        specialtyId: this.state.specialty,
       });
     }
     if (actions === CRUD_ACTIONS.EDIT) {
@@ -149,6 +153,7 @@ class UserRedux extends Component {
         roleId: this.state.role,
         positionId: this.state.position,
         avatar: this.state.avatar,
+        specialtyId: this.state.specialty,
       });
     }
   };
@@ -162,6 +167,7 @@ class UserRedux extends Component {
       "lastName",
       "phonenumber",
       "address",
+      "specialty",
     ];
     for (let i = 0; i < arrCheck.length; i++) {
       if (!this.state[arrCheck[i]]) {
@@ -173,14 +179,6 @@ class UserRedux extends Component {
 
     return isValid;
   };
-
-  // handleChange = (event) => {
-  //   const input = event.target;
-  //   // const start = input.selectionStart;
-  //   this.setState({
-  //     password: input.value.toUpperCase(),
-  //   });
-  // };
 
   onChangeInput = (event, id) => {
     let copyState = { ...this.state };
@@ -208,6 +206,7 @@ class UserRedux extends Component {
       role: user.roleId,
       previewImgURL: imageBase64,
       avatar: "",
+      specialty: user.specialtyId,
       actions: CRUD_ACTIONS.EDIT,
       userEditId: user.id,
     });
@@ -227,6 +226,7 @@ class UserRedux extends Component {
       gender,
       position,
       role,
+      specialty,
       avatar,
     } = this.state;
     return (
@@ -413,6 +413,21 @@ class UserRedux extends Component {
                       );
                     })}
                 </select>
+              </div>
+
+              <div className="col-3">
+                <label>
+                  <FormattedMessage id="admin-doctor.manage-doctor.speciality" />
+                </label>
+                <input
+                  type="text"
+                  placeholder="Specialty"
+                  className="form-control"
+                  value={specialty}
+                  onChange={(event) => {
+                    this.onChangeInput(event, "specialty");
+                  }}
+                />
               </div>
 
               <div className="col-3">

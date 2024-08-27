@@ -57,8 +57,8 @@ class FeaturedDoctor extends Component {
                       "binary"
                     );
                   }
-                  let nameEn = `${item.positionData.valueEn}, ${item.lastName} ${item.firstName}`;
-                  let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
+                  let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
+                  let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                   return (
                     <div
                       className="doctor-customize"
@@ -78,7 +78,9 @@ class FeaturedDoctor extends Component {
                           {language === LANGUAGES.VI ? nameVi : nameEn}
                         </div>
                       </div>
-                      <div className="text-eye">{item.address}</div>
+                      <div className="content-specialty">
+                        {item.specialtyId}
+                      </div>
                     </div>
                   );
                 })}
