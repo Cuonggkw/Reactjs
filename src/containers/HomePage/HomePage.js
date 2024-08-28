@@ -6,7 +6,7 @@ import FeaturedDoctor from "./Section/FeaturedDoctor";
 import HealthFacilities from "./Section/HealthFacilities";
 import HandBook from "./Section/HandBook";
 import About from "./Section/About";
-import HomeFooter from "./HomeFooter";
+import HomeFooter from "./Section/HomeFooter";
 import "./HomePage.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

@@ -121,7 +121,6 @@ class BookingModal extends Component {
   };
 
   handleConfirmBooking = async () => {
-    // !data.email || !data.doctorId || !data.date || !data.timeType
     let dateTime = new Date(this.state.birthday).getTime();
     let timeString = this.buildDataBooking(this.props.dataTime);
     let doctorName = this.buildDoctorName(this.props.dataTime);
@@ -175,7 +174,6 @@ class BookingModal extends Component {
     return (
       <Modal
         isOpen={isOpenModal}
-        // toggle={this.toggle}
         size="lg"
         centered
         className={"booking-modal-container"}

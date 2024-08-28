@@ -97,10 +97,20 @@ class DetailSpecialty extends Component {
 
       let res = await getAllDetailSpecialtyById({
         id: id,
+      });
+
+      if (res && res.errCode === 0) {
+        this.setState({
+          dataDetailSpecialty: res.data,
+        });
+      }
+
+      let result = await getAllDetailSpecialtyById({
+        id: id,
         location: location,
       });
-      if (res && res.errCode === 0) {
-        let data = res.data;
+      if (result && result.errCode === 0) {
+        let data = result.data;
         let arrDoctorId = [];
         if (data && !_.isEmpty(data)) {
           let arr = data.doctorSpecialty;
@@ -112,7 +122,7 @@ class DetailSpecialty extends Component {
         }
 
         this.setState({
-          dataDetailSpecialty: res.data,
+          dataDetailSpecialty: result.data,
           arrDoctorId: arrDoctorId,
         });
       }
@@ -128,7 +138,16 @@ class DetailSpecialty extends Component {
         <HomeHeader />
 
         <div className="detail-specialty-body">
-          <div className="description-specialty">
+          <div
+            className="description-specialty"
+            style={{
+              backgroundImage: `url(${
+                dataDetailSpecialty && dataDetailSpecialty.image
+                  ? dataDetailSpecialty.image
+                  : ""
+              }`,
+            }}
+          >
             {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && (
               <div
                 dangerouslySetInnerHTML={{

@@ -16,16 +16,31 @@
       background-size: cover;
     }
 
-    .clinic-name {
-      margin-top: 10px;
+    .infor-clinic {
       display: flex;
-      font-size: 25px;
-      font-weight: 600;
-      justify-content: center;
       align-items: center;
-      text-transform: uppercase;
-    }
+      background-color: #f1f3f5;
 
+      .clinic-img {
+        background: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: none;
+
+        width: 190px;
+        height: 160px;
+        margin: 10px 20px;
+      }
+
+      .clinic-name {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+      }
+    }
     h2 {
       font-family: sans-serif;
       font-size: 20px;

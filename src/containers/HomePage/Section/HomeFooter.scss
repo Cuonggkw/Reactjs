@@ -1,0 +1,16 @@
+.home-footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  .home-footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .address-infor {
+    }
+    .bookingcare {
+    }
+    .home-footer-partner {
+    }
+  }
+}

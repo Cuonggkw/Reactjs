@@ -23,20 +23,13 @@ class DetailClinic extends Component {
     super(props);
     this.state = {
       arrDoctorId: [],
-      dataDetailClinic: {},
+      dataDetailClinic: [],
       listProvince: [],
-      dataClinics: [],
     };
   }
 
   // run 1 duy nhất
   async componentDidMount() {
-    let result = await getAllClinic();
-    if (result && result.errCode === 0) {
-      this.setState({
-        dataClinics: result.data.image ? result.data.image : [],
-      });
-    }
     if (
       this.props.match &&
       this.props.match.params &&
@@ -49,7 +42,17 @@ class DetailClinic extends Component {
       });
 
       if (res && res.errCode === 0) {
-        let data = res.data;
+        this.setState({
+          dataDetailClinic: res.data,
+        });
+      }
+
+      let result = await getAllDetailClinicById({
+        id: id,
+      });
+
+      if (result && result.errCode === 0) {
+        let data = result.data;
         let arrDoctorId = [];
         if (data && !_.isEmpty(data)) {
           let arr = data.doctorClinic;
@@ -61,7 +64,7 @@ class DetailClinic extends Component {
         }
 
         this.setState({
-          dataDetailClinic: res.data,
+          dataDetailClinic: result.data,
           arrDoctorId: arrDoctorId,
         });
       }
@@ -75,7 +78,7 @@ class DetailClinic extends Component {
   }
 
   render() {
-    let { arrDoctorId, dataDetailClinic, dataClinics } = this.state;
+    let { arrDoctorId, dataDetailClinic } = this.state;
     let { language } = this.props;
 
     return (
@@ -86,24 +89,23 @@ class DetailClinic extends Component {
           <div className="description-specialty">
             {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
               <>
-                <div>
-                  <div className="clinic-img">
-                    {" "}
-                    {dataDetailClinic &&
-                      dataDetailClinic.length > 0 &&
-                      dataDetailClinic.map((item, index) => {
-                        return (
-                          <div
-                            className="bg-image section-medical"
-                            style={{
-                              backgroundImage: `url(${item.image}`,
-                            }}
-                          ></div>
-                        );
-                      })}
+                <div className="infor-clinic">
+                  <div
+                    className="clinic-img"
+                    style={{
+                      backgroundImage: `url(${
+                        dataDetailClinic && dataDetailClinic.image
+                          ? dataDetailClinic.image
+                          : ""
+                      }`,
+                    }}
+                  ></div>
+                  <div>
+                    <div className="clinic-name">{dataDetailClinic.name}</div>
+                    <div className="clinic">{dataDetailClinic.address}</div>
                   </div>
-                  <div className="clinic-name">{dataDetailClinic.name}</div>
                 </div>
+
                 <div
                   dangerouslySetInnerHTML={{
                     __html: dataDetailClinic.descriptionHTML,
