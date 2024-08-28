@@ -61,9 +61,16 @@
         align-items: center;
         cursor: pointer;
 
+        a {
+          font-size: 16px;
+          text-decoration: none;
+          color: #3bc9db;
+        }
+
         i {
           font-size: 18px;
           margin-right: 5px;
+          color: #3bc9db;
         }
       }
 

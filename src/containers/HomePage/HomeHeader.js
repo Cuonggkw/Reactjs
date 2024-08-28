@@ -19,6 +19,12 @@ class HomeHeader extends Component {
     }
   };
 
+  // returnSupport = () => {
+  //   if (this.props.history) {
+  //     this.props.history.push(`https://bookingcare.vn/hotro`);
+  //   }
+  // };
+
   render() {
     // language get in redux
     let language = this.props.language;
@@ -82,7 +88,9 @@ class HomeHeader extends Component {
             <div className="right-content">
               <div className="support">
                 <i className="fas fa-question-circle"></i>
-                <FormattedMessage id="home-header.support" />
+                <a href="https://bookingcare.vn/hotro">
+                  <FormattedMessage id="home-header.support" />
+                </a>
               </div>
               <div
                 className={

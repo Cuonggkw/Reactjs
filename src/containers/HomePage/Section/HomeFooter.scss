@@ -1,16 +1,167 @@
 .home-footer {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background-color: #f1f3f5;
+
   .home-footer-container {
     display: grid;
+    margin: 15px;
+    padding-top: 15px;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
 
     .address-infor {
+      font-family: sans-serif;
+      .address-title-hn {
+        .address-title {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .content-address {
+          display: flex;
+
+          align-content: center;
+          padding-left: 10px;
+
+          p {
+            font-size: 15px;
+            color: #495057;
+          }
+
+          i {
+            font-size: 16px;
+            margin-right: 10px;
+            margin-top: 4px;
+          }
+        }
+      }
     }
     .bookingcare {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .logo-booking {
+        mix-blend-mode: multiply;
+
+        width: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background: center;
+        margin-bottom: 10px;
+
+        cursor: pointer;
+      }
+
+      .bookingcare-infor {
+        .bookingcare-infor-ul {
+          font-family: sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          li {
+            list-style: none;
+            margin-bottom: 10px;
+
+            a {
+              cursor: pointer;
+              color: #22b8cf;
+              text-decoration: none;
+            }
+          }
+        }
+      }
     }
     .home-footer-partner {
+      .partner-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .content-1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        .image {
+          width: 25%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        .infor {
+          display: flex;
+          flex-direction: column;
+          font-family: sans-serif;
+
+          .title-name {
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          .title-content {
+            font-size: 15px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+  .app {
+    border-top: 1px solid #ced4da;
+    margin: 20px;
+
+    .app-content {
+      padding-top: 10px;
+
+      i {
+        font-size: 17px;
+        margin-right: 10px;
+        margin-top: 4px;
+      }
+
+      span {
+        font-family: sans-serif;
+        font-size: 16px;
+
+        a {
+          text-decoration: none;
+          color: #22b8cf;
+        }
+      }
+    }
+  }
+  .link {
+    height: 100px;
+    background-color: #64b9e5;
+    font-size: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      padding-top: 10px;
+      margin-left: 20px;
+    }
+
+    .icon {
+      cursor: pointer;
+      padding-top: 10px;
+
+      .facebook {
+        font-size: 40px;
+        margin-right: 10px;
+        color: #1971c2;
+      }
+
+      .youtube {
+        font-size: 40px;
+        margin-right: 10px;
+        color: #e03131;
+      }
     }
   }
 }

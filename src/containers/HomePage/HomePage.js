@@ -38,7 +38,6 @@ class HomePage extends Component {
         <About />
 
         <HomeFooter />
-        <div style={{ height: "300px" }}></div>
       </div>
     );
   }

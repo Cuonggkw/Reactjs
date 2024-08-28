@@ -5,13 +5,6 @@ import { FormattedMessage } from "react-intl";
 
 class About extends Component {
   render() {
-    let settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-    };
     return (
       <div className="section-share section-about">
         <div className="section-about-haeder">Truyên thông nói về IT</div>
