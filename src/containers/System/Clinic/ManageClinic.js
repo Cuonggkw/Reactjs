@@ -75,7 +75,6 @@ class ManageClinic extends Component {
       });
     } else {
       toast.error("Something wrongs...");
-      // console.log("Hoi dan it check state", res);
     }
   };
 

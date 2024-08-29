@@ -22,6 +22,9 @@ class About extends Component {
             ></iframe>
           </div>
           <div className="content-right">
+            {/* <img
+              src={require("../../../assets/Footer/064252-doctor-check-2.png")}
+            /> */}
             <p>
               Sự sống của loài người bắt đầu từ một tế bào. Hàng nghìn tế bào sẽ
               tạo thành các mô và cơ quan. Mỗi tế bào bao bọc nhân chứa bộ máy

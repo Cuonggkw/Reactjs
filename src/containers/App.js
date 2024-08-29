@@ -26,6 +26,8 @@ import DetailDoctor from "./Patient/Doctor/DetailDoctor.js";
 import VerifyEmail from "./Patient/VerifyEmail.js";
 import DetailSpecialty from "./Patient/Specialty/DetailSpecialty.js";
 import DetailClinic from "./Patient/Clinic/DetailClinic.js";
+import ListDoctor from "./System/ListDoctor/ListDoctor.js";
+import ListSpecialty from "./System/ListSpecialty/ListSpecialty.js";
 //
 class App extends Component {
   handlePersistorState = () => {
@@ -71,7 +73,6 @@ class App extends Component {
                     path={"/doctor/"}
                     component={userIsAuthenticated(Doctor)}
                   />
-
                   <Route path={path.HOMEPAGE} component={HomePage} />
                   <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                   <Route
@@ -79,6 +80,11 @@ class App extends Component {
                     component={DetailSpecialty}
                   />
                   <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
+                  <Route path={path.LIST_DOCTOR} component={ListDoctor} />
+                  <Route
+                    path={path.LIST_SPECIALIZE}
+                    component={ListSpecialty}
+                  />
                   {/* <Route path={path.BOOKING_CARE} component={Hello} /> */}
                   <Route
                     path={path.VERIFY_EMAIL_BOOKING}

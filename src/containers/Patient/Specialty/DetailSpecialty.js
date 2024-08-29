@@ -6,6 +6,7 @@ import { withRouter } from "react-router";
 import DoctorSchedule from "../Doctor/DoctorSchedule";
 import DoctorExtraInfor from "../Doctor/DoctorExtraInfor";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
+import HomeFooter from "../../HomePage/Section/HomeFooter";
 import {
   getAllDetailSpecialtyById,
   getAllCodeService,
@@ -197,6 +198,9 @@ class DetailSpecialty extends Component {
                 </div>
               );
             })}
+        </div>
+        <div>
+          <HomeFooter />
         </div>
       </div>
     );

@@ -29,6 +29,12 @@ class Specialize extends Component {
     }
   };
 
+  handleViewListSpecialty = () => {
+    if (this.props.history) {
+      this.props.history.push(`/list-specialty`);
+    }
+  };
+
   render() {
     let { dataSpecialty } = this.state;
     return (
@@ -38,7 +44,10 @@ class Specialize extends Component {
             <span className="title-section">
               <FormattedMessage id="homepage.speciality-poplular" />
             </span>
-            <button className="btn-section">
+            <button
+              className="btn-section"
+              onClick={() => this.handleViewListSpecialty()}
+            >
               <FormattedMessage id="homepage.more-info" />
             </button>
           </div>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import logo from "../../../assets/images.png";
+import logo from "../../../assets/image.png";
 import { withRouter } from "react-router";
 import "./HomeFooter.scss";
-// import IMAGES from "../Section/index";
+
 import images_1 from "../../../assets/Footer/093706-hellodoctorlogo.png";
 import images_2 from "../../../assets/Footer/082316-logo-bernard.png";
 import images_3 from "../../../assets/Footer/064252-doctor-check-2.png";
@@ -92,6 +92,7 @@ class HomeFooter extends Component {
             <div className="partner-title">Đối tác bổ trợ nội dung</div>
             <div className="content-1">
               <img src={images_1} className="image" />
+
               <div className="infor">
                 <span className="title-name">Hello Doctor</span>
                 <span className="title-content">
@@ -99,6 +100,7 @@ class HomeFooter extends Component {
                 </span>
               </div>
             </div>
+
             <div className="content-1">
               <img src={images_2} className="image" />
               <div className="infor">
@@ -111,7 +113,7 @@ class HomeFooter extends Component {
               </div>
             </div>
             <div className="content-1">
-              <img src={images_3} className="image" />
+              <img src={images_3} alt="image-1" className="image" />
               <div className="infor">
                 <span className="title-name">
                   Doctor Check - Tầm Soát Bệnh Để Sống Thọ Hơn

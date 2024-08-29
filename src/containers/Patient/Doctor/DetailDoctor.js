@@ -6,6 +6,7 @@ import { getDetailInforDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import DoctorSchedule from "./DoctorSchedule";
 import DoctorExtraInfor from "./DoctorExtraInfor";
+import HomeFooter from "../../HomePage/Section/HomeFooter";
 // react-router-dom => is a library
 
 // Hiển thị thông tin doctor
@@ -99,8 +100,13 @@ class DetailDoctor extends Component {
                 ></div>
               )}
           </div>
-          <div className="comment-doctor"></div>
+          <div className="comment-doctor">
+            <HomeFooter />
+          </div>
         </div>
+        {/* <div>
+          <HomeFooter />
+        </div> */}
       </>
     );
   }
