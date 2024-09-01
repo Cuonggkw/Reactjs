@@ -88,8 +88,8 @@ class DetailHandBook extends Component {
               </>
             )}
           </div>
+          <HomeFooter />
         </div>
-        <HomeFooter />
       </div>
     );
   }

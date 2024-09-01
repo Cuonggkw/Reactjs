@@ -3,16 +3,18 @@
   min-height: 100%;
 
   .detail-handbook-body {
-    // min-height: 100%;
-    margin-bottom: 50px;
+    min-height: 100%;
+
     .description-handbook {
+      min-height: 100%;
+
       width: 100%;
       display: flex;
       gap: 25px;
       justify-content: center;
-      margin-top: 20px;
 
       .content-left {
+        margin-top: 16px;
         background-color: white;
         width: 60%;
 
@@ -39,6 +41,13 @@
           img {
             width: 100%;
             margin-bottom: 10px;
+          }
+
+          .img-title {
+            color: #adb5bd;
+            margin-top: -15px;
+            font-size: 14px;
+            text-align: center;
           }
         }
       }

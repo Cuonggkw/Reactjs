@@ -3,6 +3,7 @@
     .handbook-customize {
       width: 95% !important;
       padding: 5px;
+      height: 210px;
       border: 2px solid #dee2e6;
       margin-right: 10px;
       display: flex !important;
@@ -23,6 +24,7 @@
       }
 
       .handbook-title {
+        align-content: center;
         margin-top: 25px;
         font-size: 16px;
         font-weight: bolder;
