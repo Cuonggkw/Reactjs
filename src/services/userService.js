@@ -103,6 +103,17 @@ const getAllDetailClinicById = (data) => {
   return exios.get(`/api/get-detail-clinic-by-id?id=${data.id}`);
 };
 
+// Hand Book
+const createNewHandBook = (data) => {
+  return exios.post("/api/create-new-handbook", data);
+};
+const getAllHandBook = () => {
+  return exios.get("/api/get-handbook");
+};
+const getAllDetailHandBookById = (data) => {
+  return exios.get(`/api/get-detail-handbook-by-id?id=${data.id}`);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -126,6 +137,9 @@ export {
   createNewClinic,
   getAllClinic,
   getAllDetailClinicById,
+  createNewHandBook,
+  getAllHandBook,
+  getAllDetailHandBookById,
 };
 
 // axios => để request từ client lên server.

@@ -19,12 +19,6 @@ class HomeHeader extends Component {
     }
   };
 
-  // returnSupport = () => {
-  //   if (this.props.history) {
-  //     this.props.history.push(`https://bookingcare.vn/hotro`);
-  //   }
-  // };
-
   render() {
     // language get in redux
     let language = this.props.language;

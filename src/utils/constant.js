@@ -10,6 +10,7 @@ export const path = {
   VERIFY_EMAIL_BOOKING: "/verify-booking",
   LIST_DOCTOR: "/list-doctor",
   LIST_SPECIALIZE: "/list-specialty",
+  DETAIL_HANDBOOK: "/detail-handbook/:id",
   // BOOKING_CARE: "/booking-care/:id",
 };
 

@@ -25,6 +25,7 @@ import CustomScrollbars from "../components/CustomScrollbars.js";
 import DetailDoctor from "./Patient/Doctor/DetailDoctor.js";
 import VerifyEmail from "./Patient/VerifyEmail.js";
 import DetailSpecialty from "./Patient/Specialty/DetailSpecialty.js";
+import DetailHandBook from "./Patient/HandBook/DetailHandBook.js";
 import DetailClinic from "./Patient/Clinic/DetailClinic.js";
 import ListDoctor from "./System/ListDoctor/ListDoctor.js";
 import ListSpecialty from "./System/ListSpecialty/ListSpecialty.js";
@@ -80,6 +81,10 @@ class App extends Component {
                     component={DetailSpecialty}
                   />
                   <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
+                  <Route
+                    path={path.DETAIL_HANDBOOK}
+                    component={DetailHandBook}
+                  />
                   <Route path={path.LIST_DOCTOR} component={ListDoctor} />
                   <Route
                     path={path.LIST_SPECIALIZE}

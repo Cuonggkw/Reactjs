@@ -1,27 +1,26 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import "./ManageClinic.scss";
+import "./ManageHandBook.scss";
 import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
-import { CommonUtils } from "../../../utils";
+import { createNewHandBook } from "../../../services/userService";
 import { toast } from "react-toastify";
-import { createNewClinic } from "../../../services/userService";
+import { CommonUtils } from "../../../utils";
 
 import { FormattedMessage } from "react-intl";
-// react-router-dom => is a library
 
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
 // Hiển thị thông tin doctor
-class ManageClinic extends Component {
+class ManageHandBook extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "",
-      address: "",
       imageBase64: "",
       descriptionHTML: "",
       descriptionMarkdown: "",
+      document: "",
     };
   }
 
@@ -33,6 +32,22 @@ class ManageClinic extends Component {
     if (this.props.language !== prevProps.language) {
     }
   }
+
+  handleSaveNewHandBook = async () => {
+    let res = await createNewHandBook(this.state);
+    if (res && res.errCode === 0) {
+      toast.success("Add new hand book success!");
+      this.setState({
+        name: "",
+        imageBase64: "",
+        document: "",
+        descriptionHTML: "",
+        descriptionMarkdown: "",
+      });
+    } else {
+      toast.error("Something wrongs...");
+    }
+  };
 
   handleOnChangInput = (event, id) => {
     let stateCopy = { ...this.state };
@@ -61,30 +76,13 @@ class ManageClinic extends Component {
     }
   };
 
-  handleSaveNewClinic = async () => {
-    let res = await createNewClinic(this.state);
-    if (res && res.errCode === 0) {
-      toast.success("Add new clinic success!");
-      this.setState({
-        name: "",
-        imageBase64: "",
-        address: "",
-        descriptionHTML: "",
-        descriptionMarkdown: "",
-      });
-    } else {
-      toast.error("Something wrongs...");
-    }
-  };
-
-  // menuApp.js => System.js => ManageClinic.js
   render() {
     return (
-      <div className="manage-clinic-container">
-        <div className="ms-title">Quản lý phòng khám</div>
-        <div className="all-new-specialty">
-          <div className="col-6 mb-4 form-group">
-            <label>Tên phòng khám</label>
+      <div className="manage-handbook-container">
+        <div className="handbook-title">Quản lý cẩm nang</div>
+        <div className="all-new-handbook">
+          <div className="col-5 form-group">
+            <label>Tên cẩm nang</label>
             <input
               type="text"
               className="form-control"
@@ -92,39 +90,39 @@ class ManageClinic extends Component {
               onChange={(event) => this.handleOnChangInput(event, "name")}
             />
           </div>
-          <div className="col-6 mb-4 form-group">
-            <label>Ảnh phòng khám</label>
+          <div className="col-5 mb-4 form-group">
+            <label>Ảnh cẩm nang</label>
             <input
               type="file"
               className="form-control"
               onChange={(event) => this.handlOnchangeImage(event)}
             />
           </div>
-          <div className="col-6 form-group mb-4">
-            <label>Địa chỉ phòng khám</label>
-            <input
-              type="text"
+          <div className="col-5 form-group mb-4">
+            <label>Nội dung</label>
+            <textarea
               className="form-control"
-              value={this.state.address}
-              onChange={(event) => this.handleOnChangInput(event, "address")}
-            />
+              rows="4"
+              value={this.state.document}
+              onChange={(event) => this.handleOnChangInput(event, "document")}
+            ></textarea>
           </div>
-          <div className="col-12">
-            <MdEditor
-              style={{ height: "400px" }}
-              renderHTML={(text) => mdParser.render(text)}
-              onChange={this.handleEditorChange}
-              value={this.state.descriptionMarkdown}
-            />
-          </div>
-          <div className="col-12">
-            <button
-              className="btn-save"
-              onClick={() => this.handleSaveNewClinic()}
-            >
-              Save
-            </button>
-          </div>
+        </div>
+        <div className="col-12">
+          <MdEditor
+            style={{ height: "400px" }}
+            renderHTML={(text) => mdParser.render(text)}
+            onChange={this.handleEditorChange}
+            value={this.state.descriptionMarkdown}
+          />
+        </div>
+        <div className="col-12">
+          <button
+            className="btn-save"
+            onClick={() => this.handleSaveNewHandBook()}
+          >
+            Save
+          </button>
         </div>
       </div>
     );
@@ -141,4 +139,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageClinic);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageHandBook);

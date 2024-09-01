@@ -4,14 +4,30 @@
   .description-specialty {
     background: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-color: white !important;
     padding: 10px;
     margin: 15px 0;
+    font-family: sans-serif;
 
-    h3 {
+    .title-specialty {
       font-family: sans-serif;
-      font-size: 20px;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .doctor-specialty {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .doctor-list {
+      font-size: 16px;
+      color: #495057;
+    }
+
+    .specialty-ul {
+      font-size: 16px;
     }
   }
 

@@ -2,17 +2,35 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
-import specializeImg from "../../../assets/spcialize/co-xuong-khop.png";
+import { getAllHandBook } from "../../../services/userService";
+import { withRouter } from "react-router";
+import "./HandBook.scss";
 
 class HandBook extends Component {
-  render() {
-    let settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataHandBook: [],
     };
+  }
+
+  async componentDidMount() {
+    let res = await getAllHandBook();
+    if (res && res.errCode === 0) {
+      this.setState({
+        dataHandBook: res.data ? res.data : [],
+      });
+    }
+    // console.log("Check res hand book:", res);
+  }
+
+  handleViewDetailHandBook = (item) => {
+    if (this.props.history) {
+      this.props.history.push(`/detail-handbook/${item.id}`);
+    }
+  };
+  render() {
+    let { dataHandBook } = this.state;
     return (
       <div className="section-share section-handbooks">
         <div className="section-container">
@@ -22,30 +40,25 @@ class HandBook extends Component {
           </div>
           <div className="section-body">
             <Slider {...this.props.settings}>
-              <div className="handbook-customize">
-                <div className="bg-image section-handbook"></div>
-                <h3>Cơ xương khớp 1</h3>
-              </div>
-              <div className="handbook-customize">
-                <div className="bg-image section-handbook"></div>
-                <h3>Cơ xương khớp 2</h3>
-              </div>
-              <div className="handbook-customize">
-                <div className="bg-image section-handbook"></div>
-                <h3>Cơ xương khớp 3</h3>
-              </div>
-              <div className="handbook-customize">
-                <div className="bg-image section-handbook"></div>
-                <h3>Cơ xương khớp 4</h3>
-              </div>
-              <div className="handbook-customize">
-                <div className="bg-image section-handbook"></div>
-                <h3>Cơ xương khớp 5</h3>
-              </div>
-              <div className="handbook-customize">
-                <div className="bg-image section-handbook"></div>
-                <h3>Cơ xương khớp 6</h3>
-              </div>
+              {dataHandBook &&
+                dataHandBook.length > 0 &&
+                dataHandBook.map((item, index) => {
+                  return (
+                    <div
+                      className="handbook-customize"
+                      key={index}
+                      onClick={() => this.handleViewDetailHandBook(item)}
+                    >
+                      <div
+                        className="bg-image section-handbook"
+                        style={{
+                          backgroundImage: `url(${item.image}`,
+                        }}
+                      ></div>
+                      <div className="handbook-title">{item.name}</div>
+                    </div>
+                  );
+                })}
             </Slider>
           </div>
         </div>
@@ -67,4 +80,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 // Help connect between react with redux
-export default connect(mapStateToProps, mapDispatchToProps)(HandBook);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(HandBook)
+);

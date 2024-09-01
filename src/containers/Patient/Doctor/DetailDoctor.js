@@ -104,9 +104,6 @@ class DetailDoctor extends Component {
             <HomeFooter />
           </div>
         </div>
-        {/* <div>
-          <HomeFooter />
-        </div> */}
       </>
     );
   }

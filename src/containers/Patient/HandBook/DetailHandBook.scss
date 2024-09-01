@@ -1,0 +1,71 @@
+.detail-handbook-container {
+  background-color: #ced4da;
+  min-height: 100%;
+
+  .detail-handbook-body {
+    // min-height: 100%;
+    margin-bottom: 50px;
+    .description-handbook {
+      width: 100%;
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 20px;
+
+      .content-left {
+        background-color: white;
+        width: 60%;
+
+        .handbook-img {
+          margin: 0 auto;
+          background: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 857px;
+          height: 310px;
+        }
+
+        .handbook-name {
+          font-size: 25px;
+          font-weight: 600;
+          margin: 0 20px;
+          margin-top: 20px;
+        }
+
+        .handbook-html {
+          font-size: 17px;
+          margin: 10px 20px;
+
+          img {
+            width: 100%;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .content-right {
+        width: 27%;
+        min-height: 100%;
+        .main-content {
+          position: sticky;
+          top: 85px;
+          border-radius: 5px;
+          padding: 15px;
+          background-color: white;
+          .main {
+            font-size: 25px;
+            font-weight: bold;
+            width: 62%;
+            border-bottom: 5px solid #ffa94d;
+          }
+          .border-handbook {
+          }
+          .handbook-document {
+            margin-top: 15px;
+            font-size: 20px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

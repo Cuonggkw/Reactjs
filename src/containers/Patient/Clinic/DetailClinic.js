@@ -2,18 +2,13 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./DetailClinic.scss";
 import HomeHeader from "../../HomePage/HomeHeader";
-import { withRouter } from "react-router";
+
 import DoctorSchedule from "../Doctor/DoctorSchedule";
 import DoctorExtraInfor from "../Doctor/DoctorExtraInfor";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 import HomeFooter from "../../HomePage/Section/HomeFooter";
-import {
-  getAllDetailClinicById,
-  getAllCodeService,
-  getAllClinic,
-} from "../../../services/userService";
+import { getAllDetailClinicById } from "../../../services/userService";
 
-import { FormattedMessage } from "react-intl";
 import _, { indexOf } from "lodash";
 import { LANGUAGES } from "../../../utils";
 // react-router-dom => is a library
@@ -83,11 +78,11 @@ class DetailClinic extends Component {
     let { language } = this.props;
 
     return (
-      <div className="detail-specialty-container">
+      <div className="detail-clinic-container">
         <HomeHeader />
 
-        <div className="detail-specialty-body">
-          <div className="description-specialty">
+        <div className="detail-clinic-body">
+          <div className="description-clinic">
             {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
               <>
                 <div className="infor-clinic">
